@@ -1,6 +1,6 @@
-SEO-service on Yii 2
+I have taken as a basis "SEO-service on Yii 2"
 ================================
-
+I have taken as a basis
 Source code of SEO-service.
 
 [Read more](http://www.elisdn.ru/blog/60/seo-service-on-yii2-installing-of-application).
@@ -10,15 +10,10 @@ Installation
 
 Create a project:
 
-~~~
-composer global require "fxp/composer-asset-plugin:~1.0.0"
-composer create-project --prefer-dist --stability=dev elisdn/seokeys project
-~~~
-
-or clone the repository for `pull` command availability:
+clone the repository for `pull` command availability:
 
 ~~~
-git clone https://github.com/ElisDN/seokeys.git project
+git clone https://github.com/kdes70/tender-pro.git project
 cd project
 composer global require "fxp/composer-asset-plugin:~1.0.0"
 composer install
