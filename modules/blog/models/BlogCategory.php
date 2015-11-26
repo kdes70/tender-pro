@@ -3,6 +3,7 @@
 namespace app\modules\blog\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "{{%blog_category}}".
@@ -36,7 +37,7 @@ class BlogCategory extends \yii\db\ActiveRecord
     {
         return [
             [['parent_id', 'created_at', 'updated_at', 'status', 'order'], 'integer'],
-            [['name', 'slug', 'prev_img', 'created_at', 'updated_at'], 'required'],
+            [['name'], 'required'],
             [['name', 'slug', 'prev_img'], 'string', 'max' => 255],
             [['slug'], 'unique']
         ];
@@ -60,6 +61,23 @@ class BlogCategory extends \yii\db\ActiveRecord
         ];
     }
 
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+            'slug' => [
+                'class' => 'app\behaviors\Slug',
+                'in_attribute' => 'name',
+                'out_attribute' => 'slug',
+                'translit' => true
+            ]
+        ];
+    }
+
+    public function getParentCategory()
+    {
+        return $this->hasOne(BlogCategory::className(), ['id' => 'parent_id']);
+    }
     /**
      * @return \yii\db\ActiveQuery
      */

@@ -8,6 +8,7 @@ use app\modules\admin\models\search\BlogSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\modules\blog\models\BlogTags;
 
 /**
  * BlogController implements the CRUD actions for Blog model.
@@ -61,6 +62,14 @@ class BlogController extends Controller
     public function actionCreate()
     {
         $model = new Blog();
+
+        $items = $model->getTags()->all();
+        $tags = [];
+        foreach ($items as $item)
+        {
+            $tags[] = $item->name;
+        };
+        $model->tagNames = BlogTags::array2string($tags);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

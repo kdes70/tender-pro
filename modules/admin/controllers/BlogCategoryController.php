@@ -14,6 +14,9 @@ use yii\filters\VerbFilter;
  */
 class BlogCategoryController extends Controller
 {
+    public $viewsPath = '@app/modules/admin/views/blog/category/';
+
+
     public function behaviors()
     {
         return [
@@ -24,6 +27,11 @@ class BlogCategoryController extends Controller
                 ],
             ],
         ];
+    }
+
+    public function getViewPath()
+    {
+        return Yii::getAlias($this->viewsPath);
     }
 
     /**
@@ -62,11 +70,25 @@ class BlogCategoryController extends Controller
     {
         $model = new BlogCategory();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())){
+
+
+
+            if(empty($model->parent_id) || is_null($model->parent_id))
+            {
+                $model->parent_id = 0;
+            }
+            if(is_array($model->parent_id))
+            {
+                dump(Yii::$app->request->post());
+            }
+
+             $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'category' =>  $model->find()->all(),
             ]);
         }
     }

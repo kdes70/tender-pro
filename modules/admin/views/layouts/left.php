@@ -1,3 +1,9 @@
+<?php
+
+use app\modules\admin\Module;
+
+?>
+
 <aside class="main-sidebar">
 
     <section class="sidebar">
@@ -37,13 +43,23 @@
                     ['label' => 'Settings', 'icon' => 'fa fa-wrench', 'url' => ['/admin/settings']],
                     ['label' => 'USERS MENU', 'options' => ['class' => 'header']],
                     [
-                        'label' => app\modules\admin\Module::t('module', 'ADMIN_USERS'),
+                        'label' => Module::t('module', 'ADMIN_USERS'),
                         'icon' => 'fa fa-users',
                         'url' => '#',
                         'items' => [
                             ['label' => 'List Users', 'icon' => 'fa fa-user', 'url' => '/admin/users',],
                             ['label' => 'Create User', 'icon' => 'fa fa-user-plus', 'url' => '/admin/users/create',],
                         ],
+                    ],
+                    ['label' => 'BLOG MENU', 'options' => ['class' => 'header']],
+                    [
+                        'label' => Module::t('module', 'ADMIN_BLOG'),
+                        'icon' => 'fa fa-laptop',
+                        'url' => '#',
+                        'items' => [
+                            ['label' => 'List Blog', 'icon' => 'fa fa-book', 'url' => '/admin/blog'],
+                            ['label' => 'List Category', 'icon' => 'fa fa-list-ul', 'url' => '/admin/blog-category'],
+                        ]
                     ],
                     [
                         'label' => 'Same tools',

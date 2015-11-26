@@ -2,13 +2,13 @@
 
 namespace app\modules\admin\controllers;
 
-use Yii;
-use app\modules\blog\models\BlogTags;
 use app\modules\admin\models\search\BlogTagsSearch;
+use app\modules\blog\models\BlogTags;
+use Yii;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
-
+use yii\web\Response;
 /**
  * BlogTagsController implements the CRUD actions for BlogTags model.
  */
@@ -25,6 +25,24 @@ class BlogTagsController extends Controller
             ],
         ];
     }
+
+
+    // On TagController (example)
+    // actionList to return matched tags
+    public function actionList($query)
+    {
+        $models = BlogTags::findAllByName($query);
+        $items = [];
+        foreach ($models as $model) {
+            $items[] = ['name' => $model->name];
+        }
+        // We know we can use ContentNegotiator filter
+        // this way is easier to show you here :)
+        Yii::$app->response->format = Response::FORMAT_JSON;
+
+        return $items;
+    }
+    //Read more at: http://yiiwheels.com/extension/yii2-taggable-behavior
 
     /**
      * Lists all BlogTags models.

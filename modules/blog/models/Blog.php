@@ -5,7 +5,9 @@ namespace app\modules\blog\models;
 use app\modules\admin\models\BlogCategory;
 use app\modules\admin\models\BlogTagsBlog;
 use app\modules\admin\models\User;
+use dosamigos\taggable\Taggable;
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "{{%blog}}".
@@ -44,12 +46,14 @@ class Blog extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['category_id', 'user_id', 'title', 'slug', 'text', 'prev_img', 'created_at', 'updated_at'], 'required'],
+            [['user_id', 'title', 'text'], 'required'],
             [['category_id', 'user_id', 'images_id', 'created_at', 'updated_at', 'status', 'order'], 'integer'],
             [['text'], 'string'],
-            [['publication_at'], 'safe'],
+            [['publication_at', 'tagNames'], 'safe'],
             [['title', 'slug', 'prev_img'], 'string', 'max' => 255],
-            [['slug'], 'unique']
+            [['slug'], 'unique'],
+            ['tagNames', 'match', 'pattern' => '/^[\w\s,]+$/', 'message' => 'В тегах можно использовать только буквы.'],
+
         ];
     }
 
@@ -75,6 +79,19 @@ class Blog extends \yii\db\ActiveRecord
         ];
     }
 
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+            [ 'class' => Taggable::className(), ],//tags
+            'slug' => [
+                'class' => 'app\behaviors\Slug',
+                'in_attribute' => 'title',
+                'out_attribute' => 'slug',
+                'translit' => true
+            ],
+        ];
+    }
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -97,5 +114,15 @@ class Blog extends \yii\db\ActiveRecord
     public function getBlogTagsBlogs()
     {
         return $this->hasMany(BlogTagsBlog::className(), ['blog_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     * Read more at: http://yiiwheels.com/extension/yii2-taggable-behavior
+     */
+    public function getTags()
+    {
+        $viaTable = '{{%blog_tags_blog}}';
+        return $this->hasMany(BlogTags::className(), ['id' => 'tag_id'])->viaTable($viaTable, ['blog_id' => 'id']);
     }
 }

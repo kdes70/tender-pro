@@ -54,4 +54,16 @@ class BlogTags extends \yii\db\ActiveRecord
     {
         return $this->hasMany(BlogTagsBlog::className(), ['tags_id' => 'id']);
     }
+
+    public static function findAllByName($name)
+    {
+        return BlogTags::find()
+            ->where(['like', 'name', $name])->limit(50)->all();
+    }
+
+    public static function array2string($tags)
+    {
+        return implode(', ',$tags);
+    }
+
 }
