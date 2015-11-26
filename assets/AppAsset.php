@@ -21,11 +21,14 @@ class AppAsset extends AssetBundle
         'css/site.css',
     ];
     public $js = [
+        'js/main.js',
     ];
     public $depends = [
         'app\assets\Html5ShivAsset',
         'app\assets\RespondAsset',
+        'hiqdev\assets\icheck\iCheckAsset',
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+
     ];
 }

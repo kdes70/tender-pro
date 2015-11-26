@@ -18,8 +18,12 @@ return [
         'app\modules\user\Bootstrap',
     ],
     'modules' => [
+//        'settings' => [
+//            'class' => 'pheme\settings\Module',
+//        ],
         'admin' => [
             'class' => 'app\modules\admin\Module',
+            'layout' => 'main',
         ],
         'main' => [
             'class' => 'app\modules\main\Module',
@@ -27,12 +31,18 @@ return [
         'user' => [
             'class' => 'app\modules\user\Module',
         ],
+        'blog' => [
+            'class' => 'app\modules\blog\Module',
+        ],
     ],
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
             'charset' => 'utf8',
         ],
+//        'settings' => [
+//            'class' => 'pheme\settings\components\Settings'
+//        ],
         'urlManager' => [
             'class' => 'yii\web\UrlManager',
             'enablePrettyUrl' => true,

@@ -1,11 +1,51 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f68a5eb2ddc8cd142d2cd5932f22c60e",
+    "hash": "e86a086e5bdae916fa56d3b2327469ce",
     "packages": [
+        {
+            "name": "almasaeed2010/adminlte",
+            "version": "v2.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/almasaeed2010/AdminLTE.git",
+                "reference": "1ee281b3b99e8d8cccdc72fb8437c6888149cb46"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/1ee281b3b99e8d8cccdc72fb8437c6888149cb46",
+                "reference": "1ee281b3b99e8d8cccdc72fb8437c6888149cb46",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abdullah Almsaeed",
+                    "email": "support@almsaeedstudio.com"
+                }
+            ],
+            "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 3",
+            "homepage": "http://almsaeedstudio.com/",
+            "keywords": [
+                "JS",
+                "admin",
+                "back-end",
+                "css",
+                "less",
+                "responsive",
+                "template",
+                "theme",
+                "web"
+            ],
+            "time": "2015-10-23 14:50:49"
+        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v3.3.5",
@@ -56,6 +96,70 @@
             ]
         },
         {
+            "name": "bower-asset/fastclick",
+            "version": "v0.6.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ftlabs/fastclick.git",
+                "reference": "57d35f73ca54e31ee37161e32f6ac11786f520d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ftlabs/fastclick/zipball/57d35f73ca54e31ee37161e32f6ac11786f520d2",
+                "reference": "57d35f73ca54e31ee37161e32f6ac11786f520d2",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "lib/fastclick.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "component.json",
+                    "package.json",
+                    "Makefile",
+                    "tests",
+                    "examples"
+                ]
+            }
+        },
+        {
+            "name": "bower-asset/fontawesome",
+            "version": "v4.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FortAwesome/Font-Awesome.git",
+                "reference": "e554555d73a44e0a7d11b0361ad7a5325a5f551c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/e554555d73a44e0a7d11b0361ad7a5325a5f551c",
+                "reference": "e554555d73a44e0a7d11b0361ad7a5325a5f551c",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "less/font-awesome.less",
+                    "scss/font-awesome.scss"
+                ],
+                "bower-asset-ignore": [
+                    "*/.*",
+                    "*.json",
+                    "src",
+                    "*.yml",
+                    "Gemfile",
+                    "Gemfile.lock",
+                    "*.md"
+                ]
+            },
+            "license": [
+                "OFL-1.1",
+                "MIT",
+                "CC-BY-3.0"
+            ],
+            "description": "Font Awesome"
+        },
+        {
             "name": "bower-asset/html5shiv",
             "version": "3.7.3",
             "source": {
@@ -83,6 +187,56 @@
                     "build.xml"
                 ]
             }
+        },
+        {
+            "name": "bower-asset/icheck",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fronteed/icheck.git",
+                "reference": "8a6eb37bd7dab1e843c1b630c91c6398ff409d05"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fronteed/icheck/zipball/8a6eb37bd7dab1e843c1b630c91c6398ff409d05",
+                "reference": "8a6eb37bd7dab1e843c1b630c91c6398ff409d05",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "./icheck.min.js"
+                ],
+                "bower-asset-ignore": [
+                    ".gitignore",
+                    "CHANGELOG.md",
+                    "README.md",
+                    "demo/"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Highly customizable checkboxes and radio buttons (jQuery & Zepto)",
+            "keywords": [
+                "accessibility",
+                "checkbox",
+                "checked",
+                "custom",
+                "disabled",
+                "field",
+                "form",
+                "icheck",
+                "indeterminate",
+                "input",
+                "radio",
+                "replacement",
+                "skins",
+                "ui"
+            ]
         },
         {
             "name": "bower-asset/jquery",
@@ -127,6 +281,31 @@
                 "jquery",
                 "library"
             ]
+        },
+        {
+            "name": "bower-asset/jquery-ui",
+            "version": "1.11.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jqueryui.git",
+                "reference": "c34f8dbf3ba57b3784b93f26119f436c0e8288e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jqueryui/zipball/c34f8dbf3ba57b3784b93f26119f436c0e8288e1",
+                "reference": "c34f8dbf3ba57b3784b93f26119f436c0e8288e1",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.6"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "jquery-ui.js"
+                ],
+                "bower-asset-ignore": []
+            }
         },
         {
             "name": "bower-asset/jquery.inputmask",
@@ -233,17 +412,136 @@
             "description": "Fast and lightweight polyfill for min/max-width CSS3 Media Queries (for IE 6-8, and more)"
         },
         {
-            "name": "bower-asset/yii2-pjax",
-            "version": "v2.0.4",
+            "name": "bower-asset/sweetalert",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/yiisoft/jquery-pjax.git",
-                "reference": "3f20897307cca046fca5323b318475ae9dac0ca0"
+                "url": "https://github.com/t4t5/sweetalert.git",
+                "reference": "3b9d8eb90268e0b1f8f58b2eba240631df0ad18f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/3f20897307cca046fca5323b318475ae9dac0ca0",
-                "reference": "3f20897307cca046fca5323b318475ae9dac0ca0",
+                "url": "https://api.github.com/repos/t4t5/sweetalert/zipball/3b9d8eb90268e0b1f8f58b2eba240631df0ad18f",
+                "reference": "3b9d8eb90268e0b1f8f58b2eba240631df0ad18f",
+                "shasum": ""
+            },
+            "require-dev": {
+                "bower-asset/jquery": "~2.1.4",
+                "bower-asset/qunit": "~1.18.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "dist/sweetalert.min.js",
+                    "dist/sweetalert.css"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A beautiful replacement for JavaScript's alert.",
+            "keywords": [
+                "alert",
+                "modal"
+            ]
+        },
+        {
+            "name": "bower-asset/switchery",
+            "version": "0.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/abpetkov/switchery.git",
+                "reference": "6361b872d616337f0fd23b9a32be07f7b50512d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/abpetkov/switchery/zipball/6361b872d616337f0fd23b9a32be07f7b50512d3",
+                "reference": "6361b872d616337f0fd23b9a32be07f7b50512d3",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/fastclick": "0.6.11",
+                "bower-asset/transitionize": "*"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "dist/switchery.js",
+                    "dist/switchery.css"
+                ],
+                "bower-asset-ignore": [
+                    "build",
+                    "components",
+                    "node_modules",
+                    "bower_components",
+                    "component.json",
+                    "Makefile",
+                    "README.md",
+                    ".*"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Component to create iOS 7 styled switches from default input checkboxes",
+            "keywords": [
+                "checkbox",
+                "iOS7",
+                "input",
+                "switch"
+            ]
+        },
+        {
+            "name": "bower-asset/transitionize",
+            "version": "0.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/abpetkov/transitionize.git",
+                "reference": "bd106f74b90520774c1a7fff5f1f24073c0bce89"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/abpetkov/transitionize/zipball/bd106f74b90520774c1a7fff5f1f24073c0bce89",
+                "reference": "bd106f74b90520774c1a7fff5f1f24073c0bce89",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/transitionize.js",
+                "bower-asset-ignore": [
+                    "build",
+                    "components",
+                    "node_modules",
+                    "bower_components",
+                    "component.json",
+                    "index.html",
+                    "Makefile",
+                    "README.md",
+                    ".*"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Create CSS3 transitions dynamically",
+            "keywords": [
+                "css3",
+                "dynamic",
+                "transition"
+            ]
+        },
+        {
+            "name": "bower-asset/yii2-pjax",
+            "version": "v2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/jquery-pjax.git",
+                "reference": "6818718408086db6bdcf33649cecb86b6b4f9b67"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/6818718408086db6bdcf33649cecb86b6b4f9b67",
+                "reference": "6818718408086db6bdcf33649cecb86b6b4f9b67",
                 "shasum": ""
             },
             "require": {
@@ -326,6 +624,103 @@
             "time": "2015-03-06 05:28:07"
         },
         {
+            "name": "cebe/yii2-gravatar",
+            "version": "1.1",
+            "target-dir": "cebe/gravatar",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cebe/yii2-gravatar.git",
+                "reference": "c9c01bd14c9bdee9e5ae1ef1aad23f80c182c057"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cebe/yii2-gravatar/zipball/c9c01bd14c9bdee9e5ae1ef1aad23f80c182c057",
+                "reference": "c9c01bd14c9bdee9e5ae1ef1aad23f80c182c057",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-0": {
+                    "cebe\\gravatar\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carsten Brandt",
+                    "email": "mail@cebe.cc",
+                    "homepage": "http://cebe.cc/",
+                    "role": "Core framework development"
+                }
+            ],
+            "description": "Gravatar Widget for Yii 2",
+            "keywords": [
+                "gravatar",
+                "yii"
+            ],
+            "time": "2013-12-10 17:49:58"
+        },
+        {
+            "name": "dmstr/yii2-adminlte-asset",
+            "version": "2.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dmstr/yii2-adminlte-asset.git",
+                "reference": "c842a15ceef4e903f70ac927ec3246e6d53e1148"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dmstr/yii2-adminlte-asset/zipball/c842a15ceef4e903f70ac927ec3246e6d53e1148",
+                "reference": "c842a15ceef4e903f70ac927ec3246e6d53e1148",
+                "shasum": ""
+            },
+            "require": {
+                "almasaeed2010/adminlte": "~2.0",
+                "cebe/yii2-gravatar": "1.*",
+                "rmrevin/yii2-fontawesome": "~2.9",
+                "yiisoft/yii2": "2.*",
+                "yiisoft/yii2-bootstrap": "2.*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "dmstr\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Munk",
+                    "email": "tobias@diemeisterei.de"
+                },
+                {
+                    "name": "Evgeniy Tkachenko",
+                    "email": "et.coder@gmail.com"
+                }
+            ],
+            "description": "Backend theme for Yii2 Framework",
+            "keywords": [
+                "AdminLTE",
+                "extension",
+                "yii2"
+            ],
+            "time": "2015-11-06 10:35:36"
+        },
+        {
             "name": "ezyang/htmlpurifier",
             "version": "v4.6.0",
             "source": {
@@ -368,6 +763,76 @@
                 "html"
             ],
             "time": "2013-11-30 08:25:19"
+        },
+        {
+            "name": "hiqdev/yii2-asset-icheck",
+            "version": "1.0.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hiqdev/yii2-asset-icheck.git",
+                "reference": "abc9fbbd823b2f3bb359ea251c635a43a19bb175"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hiqdev/yii2-asset-icheck/zipball/abc9fbbd823b2f3bb359ea251c635a43a19bb175",
+                "reference": "abc9fbbd823b2f3bb359ea251c635a43a19bb175",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/icheck": "1.0.2",
+                "yiisoft/yii2": "~2.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "hiqdev\\assets\\icheck\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Andrii Vasyliev",
+                    "email": "sol@hiqdev.com",
+                    "homepage": "https://hipanel.com/",
+                    "role": "Project lead"
+                },
+                {
+                    "name": "Andrey Klochok",
+                    "email": "tafid@hiqdev.com",
+                    "homepage": "https://hiqdev.com/",
+                    "role": "Lead frontend developer"
+                },
+                {
+                    "name": "Yuriy Myronchuk",
+                    "email": "bladeroot@hiqdev.com",
+                    "homepage": "https://hiqdev.com/",
+                    "role": "QA Lead"
+                },
+                {
+                    "name": "Dmitry Naumenko",
+                    "email": "silverfire@hiqdev.com",
+                    "homepage": "http://silverfire.me/",
+                    "role": "Lead backend developer"
+                }
+            ],
+            "description": "Yii 2 asset for bower iCheck",
+            "homepage": "https://github.com/hiqdev/yii2-asset-icheck",
+            "keywords": [
+                "asset",
+                "extension",
+                "iCheck",
+                "yii2"
+            ],
+            "time": "2015-08-25 11:04:19"
         },
         {
             "name": "kartik-v/yii2-field-range",
@@ -516,6 +981,190 @@
             "time": "2015-07-19 04:49:03"
         },
         {
+            "name": "kartik-v/yii2-widget-select2",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-widget-select2.git",
+                "reference": "fa0175d936012eac3f7a382792cbb13948015c4e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-select2/zipball/fa0175d936012eac3f7a382792cbb13948015c4e",
+                "reference": "fa0175d936012eac3f7a382792cbb13948015c4e",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/yii2-krajee-base": "~1.7"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "kartik\\select2\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "Enhanced Yii2 wrapper for the Select2 jQuery plugin (sub repo split from yii2-widgets).",
+            "homepage": "https://github.com/kartik-v/yii2-widget-select2",
+            "keywords": [
+                "dropdown",
+                "extension",
+                "form",
+                "jquery",
+                "plugin",
+                "select2",
+                "widget",
+                "yii2"
+            ],
+            "time": "2015-09-22 03:10:57"
+        },
+        {
+            "name": "pheme/yii2-settings",
+            "version": "0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phemellc/yii2-settings.git",
+                "reference": "5966762e1e9cc75da1196fa39089fe6732eea636"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phemellc/yii2-settings/zipball/5966762e1e9cc75da1196fa39089fe6732eea636",
+                "reference": "5966762e1e9cc75da1196fa39089fe6732eea636",
+                "shasum": ""
+            },
+            "require": {
+                "pheme/yii2-toggle-column": "*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "pheme\\settings\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Aris Karageorgos",
+                    "email": "aris@phe.me"
+                }
+            ],
+            "description": "Yii2 Database settings",
+            "keywords": [
+                "Settings",
+                "config",
+                "yii2"
+            ],
+            "time": "2015-07-27 14:56:32"
+        },
+        {
+            "name": "pheme/yii2-toggle-column",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phemellc/yii2-toggle-column.git",
+                "reference": "6fb846a86f76234c63b3d475dc70dd59022718c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phemellc/yii2-toggle-column/zipball/6fb846a86f76234c63b3d475dc70dd59022718c1",
+                "reference": "6fb846a86f76234c63b3d475dc70dd59022718c1",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "\\pheme\\grid\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aris Karageorgos",
+                    "email": "aris@phe.me"
+                }
+            ],
+            "description": "Provides a toggle data column and action",
+            "keywords": [
+                "column",
+                "extension",
+                "toggle",
+                "yii2"
+            ],
+            "time": "2014-10-12 15:54:14"
+        },
+        {
+            "name": "rmrevin/yii2-fontawesome",
+            "version": "2.12.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rmrevin/yii2-fontawesome.git",
+                "reference": "62308687477734c166753de0ad9e2333dc7dce32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/62308687477734c166753de0ad9e2333dc7dce32",
+                "reference": "62308687477734c166753de0ad9e2333dc7dce32",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/fontawesome": "4.4.*",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "2.0.*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "rmrevin\\yii\\fontawesome\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Revin Roman",
+                    "email": "roman@rmrevin.com",
+                    "homepage": "https://rmrevin.com/"
+                }
+            ],
+            "description": "Asset Bundle for Yii2 with Font Awesome",
+            "keywords": [
+                "asset",
+                "awesome",
+                "bundle",
+                "font",
+                "yii"
+            ],
+            "time": "2015-11-20 09:17:45"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.1",
             "source": {
@@ -567,6 +1216,95 @@
                 "mailer"
             ],
             "time": "2015-06-06 14:19:39"
+        },
+        {
+            "name": "toxor88/yii2-widget-switchery",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/toxor88/yii2-widget-switchery.git",
+                "reference": "632855a9d0b69b0b09dae735e8fd740c57670d36"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/toxor88/yii2-widget-switchery/zipball/632855a9d0b69b0b09dae735e8fd740c57670d36",
+                "reference": "632855a9d0b69b0b09dae735e8fd740c57670d36",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/switchery": "0.8.*",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "toxor88\\switchery\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Steven Cash",
+                    "email": "toxor88@gmail.com"
+                }
+            ],
+            "description": "Enhanced Yii2 wrapper for the Switchery.js plugin.",
+            "homepage": "https://github.com/toxor88/yii2-widget-switchery",
+            "keywords": [
+                "checkbox",
+                "extension",
+                "form",
+                "jquery",
+                "plugin",
+                "switchery",
+                "widget",
+                "yii2"
+            ],
+            "time": "2015-05-19 16:44:29"
+        },
+        {
+            "name": "yii2mod/yii2-sweet-alert",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yii2mod/yii2-sweet-alert.git",
+                "reference": "02e5186c312702729cd27af5d978d97915260b2b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yii2mod/yii2-sweet-alert/zipball/02e5186c312702729cd27af5d978d97915260b2b",
+                "reference": "02e5186c312702729cd27af5d978d97915260b2b",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/sweetalert": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yii2mod\\alert\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Chepurnoy",
+                    "email": "igorzfort@gmail.com"
+                }
+            ],
+            "description": "Alert widget based on SweetAlert extension {@link http://tristanedwards.me/sweetalert)",
+            "keywords": [
+                "module",
+                "yii2"
+            ],
+            "time": "2015-09-24 10:45:11"
         },
         {
             "name": "yiisoft/yii2",
@@ -658,21 +1396,21 @@
         },
         {
             "name": "yiisoft/yii2-bootstrap",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "1b6b1e61cf91c3cdd517d6a7e71d30bb212e4af0"
+                "reference": "1464f93834b1d5edb1f5625f7ffd6c3723fa4923"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/1b6b1e61cf91c3cdd517d6a7e71d30bb212e4af0",
-                "reference": "1b6b1e61cf91c3cdd517d6a7e71d30bb212e4af0",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/1464f93834b1d5edb1f5625f7ffd6c3723fa4923",
+                "reference": "1464f93834b1d5edb1f5625f7ffd6c3723fa4923",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/bootstrap": "3.3.* | 3.2.* | 3.1.*",
-                "yiisoft/yii2": ">=2.0.4"
+                "yiisoft/yii2": ">=2.0.6"
             },
             "type": "yii2-extension",
             "extra": {
@@ -704,7 +1442,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2015-05-10 22:08:17"
+            "time": "2015-09-23 17:48:24"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -752,6 +1490,56 @@
                 "yii2"
             ],
             "time": "2015-03-01 06:22:44"
+        },
+        {
+            "name": "yiisoft/yii2-jui",
+            "version": "2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-jui.git",
+                "reference": "ce16f29cca654702c2ee500ccad9657a2d2e6a09"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-jui/zipball/ce16f29cca654702c2ee500ccad9657a2d2e6a09",
+                "reference": "ce16f29cca654702c2ee500ccad9657a2d2e6a09",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery-ui": "1.11.*@stable",
+                "yiisoft/yii2": ">=2.0.4"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                },
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\jui\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Qiang Xue",
+                    "email": "qiang.xue@gmail.com"
+                }
+            ],
+            "description": "The Jquery UI extension for the Yii framework",
+            "keywords": [
+                "jQuery UI",
+                "yii2"
+            ],
+            "time": "2015-05-10 22:09:43"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
@@ -1113,9 +1901,10 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "kartik-v/yii2-widget-select2": 20
+    },
     "prefer-stable": false,
-    "prefer-lowest": false,
     "platform": {
         "php": ">=5.4.0"
     },
