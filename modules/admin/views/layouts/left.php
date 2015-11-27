@@ -1,6 +1,7 @@
 <?php
 
-use app\modules\admin\Module;
+    use app\modules\admin\Module;
+    use iutbay\yii2kcfinder\KCFinderInputWidget;
 
 ?>
 
