@@ -2,13 +2,13 @@
 
 namespace app\modules\admin\controllers;
 
-use Yii;
-use app\modules\blog\models\Blog;
 use app\modules\admin\models\search\BlogSearch;
+use app\modules\blog\models\Blog;
+use app\modules\blog\models\BlogTags;
+use Yii;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
-use app\modules\blog\models\BlogTags;
 
 /**
  * BlogController implements the CRUD actions for Blog model.
@@ -71,11 +71,14 @@ class BlogController extends Controller
         };
         $model->tagNames = BlogTags::array2string($tags);
 
+        $images = ''; //isset($model->getImages()) ? $model->getImages() : FALSE;
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'images' =>$images,
             ]);
         }
     }

@@ -1,10 +1,10 @@
 <?php
 
+    use kartik\select2\Select2;
+    use toxor88\switchery\Switchery;
     use yii\helpers\ArrayHelper;
     use yii\helpers\Html;
     use yii\widgets\ActiveForm;
-    use toxor88\switchery\Switchery;
-    use kartik\select2\Select2;
 
     /* @var $this yii\web\View */
 /* @var $model app\modules\blog\models\BlogCategory */
@@ -17,22 +17,18 @@
 
     <?php if(!empty($category)):?>
 
-        <?php
-
-        //dump(ArrayHelper::map($category, 'id', 'name'));
-
-        echo $form->field($model, 'parent_id')->widget(Select2::classname(), [
-            'language' => 'ru',
-            'value' => 0,
-            'data' =>  ArrayHelper::map($category, 'id', 'name'),
-            'options' => [
+    <?= $form->field($model, 'parent_id')->widget(Select2::classname(), [
+            'language'      => 'ru',
+            'value'         => 0,
+            'data'          => ArrayHelper::map($category, 'id', 'name'),
+            'options'       => [
                 'placeholder' => 'Select provinces ...',
             ],
             'pluginOptions' => [
-                'allowClear' => true
+                'allowClear' => TRUE
             ],
         ]);
-        ?>
+    ?>
 
 
    <!-- --><?/*= $form->field($model, 'parent_id')->dropDownList(
