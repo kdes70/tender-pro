@@ -45,7 +45,7 @@ class Alert extends Widget
     ];
 
     /**
-     * @var array the options for rendering the close button tag.
+     * @var array the options for rendering the clos ebutton tag.
      */
     public $closeButton = [];
 

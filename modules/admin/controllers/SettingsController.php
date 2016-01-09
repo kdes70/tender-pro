@@ -51,9 +51,7 @@ class SettingsController extends Controller
 
         if (Yii::$app->request->post())
         {
-
                 $section = Yii::$app->request->post();
-
 
             dump($section);
                 $success = 0;

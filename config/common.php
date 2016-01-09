@@ -7,6 +7,25 @@ $params = ArrayHelper::merge(
     require(__DIR__ . '/params-local.php')
 );
 
+    // получаем список директорий в /modules
+    $dirs = scandir(dirname(__FILE__).'/../modules');
+
+    // строим массив
+    $modules = array();
+    foreach ($dirs as $name){
+        if ($name[0] != '.')
+            $modules[$name] = array('class'=>'app\modules\\' . $name . '\\' .'Module');
+    }
+
+
+    // строка вида 'news|page|user|...|socials'
+    // пригодится для подстановки в регулярные выражения общих правил маршрутизации
+    define('MODULES_MATCHES', implode('|', array_keys($modules)));
+
+   // dump($mod);
+
+
+
 return [
     'name' => 'SeoKeys',
     'language'=>'ru-RU',
@@ -16,8 +35,9 @@ return [
         'app\modules\admin\Bootstrap',
         'app\modules\main\Bootstrap',
         'app\modules\user\Bootstrap',
+        'app\modules\blog\Bootstrap',
     ],
-    'modules' => [
+    'modules' => array_replace($modules,[
 //        'settings' => [
 //            'class' => 'pheme\settings\Module',
 //        ],
@@ -25,24 +45,22 @@ return [
             'class' => 'app\modules\admin\Module',
             'layout' => 'main',
         ],
-        'main' => [
-            'class' => 'app\modules\main\Module',
+        'yii2images' => [
+            'class' => 'rico\yii2images\Module',
+            //be sure, that permissions ok
+            //if you cant avoid permission errors you have to create "images" folder in web root manually and set 777 permissions
+            'imagesStorePath' => 'upload/store', //path to origin images
+            'imagesCachePath' => 'upload/cache', //path to resized copies
+            'graphicsLibrary' => 'GD', //but really its better to use 'Imagick'
+            'placeHolderPath' => '@webroot/images/placeHolder.png', // if you want to get placeholder when image not exists, string will be processed by Yii::getAlias
         ],
-        'user' => [
-            'class' => 'app\modules\user\Module',
-        ],
-        'blog' => [
-            'class' => 'app\modules\blog\Module',
-        ],
-    ],
+    ]),
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
             'charset' => 'utf8',
         ],
-//        'settings' => [
-//            'class' => 'pheme\settings\components\Settings'
-//        ],
+        'settings' => ['class' => 'app\component\Settings'],
         'urlManager' => [
             'class' => 'yii\web\UrlManager',
             'enablePrettyUrl' => true,

@@ -1,0 +1,130 @@
+@import bourbon
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+
+	.top-menu
+		display: none
+		min-width: 295px
+		text-align: right
+		background-color: #2F2E2F
+		float: right
+		margin-top: -10px
+		ul
+			li
+				display: block !important
+				line-height: 0
+				padding: 0
+				@include transition(all .3s ease)
+			a
+				display: block !important
+				line-height: 48px
+			li:hover, li:focus
+			  	background-color: #2C2B31
+
+  	.logo
+	  	float: right
+
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+
+
+	/*Disable Animation on Mobile Devices*/
+	.animated
+		/*CSS transitions*/
+		-o-transition-property: none !important
+		-moz-transition-property: none !important
+		-ms-transition-property: none !important
+		-webkit-transition-property: none !important
+		transition-property: none !important
+		/*CSS transforms*/
+		-o-transform: none !important
+		-moz-transform: none !important
+		-ms-transform: none !important
+		-webkit-transform: none !important
+		transform: none !important
+		/*CSS animations*/
+		-webkit-animation: none !important
+		-moz-animation: none !important
+		-o-animation: none !important
+		-ms-animation: none !important
+		animation: none !important
+
+
+	.top-menu
+		margin-top: 0 !important
+
+
+	.social
+		padding: 0
+		li
+		  margin-left: 10px !important
+
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+
+	.top-menu
+	  	margin-top: -10px
+
+	.social
+	  	display: none
+
+	.header_wrap
+		margin-top: 20px
+	.hi-title
+ 		h1
+	  		font-size: em(24px)
+
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+
+	.top-menu
+		display: block !important
+
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+
+	a
+		outline: none !important
+

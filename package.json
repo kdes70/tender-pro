@@ -1,0 +1,15 @@
+{
+  "name": "tender-pro.lok",
+  "version": "1.0.0",
+  "description": "Разроботка движка для моего блога",
+  "author": "kdes70",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "node-bourbon": "^4.2.3"
+  }
+}

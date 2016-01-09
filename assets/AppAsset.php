@@ -21,7 +21,7 @@ class AppAsset extends AssetBundle
         'css/site.css',
     ];
     public $js = [
-        'js/main.js',
+        'js/admin.js',
     ];
     public $depends = [
         'app\assets\Html5ShivAsset',

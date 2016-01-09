@@ -6,6 +6,8 @@ use yii\web\Controller;
 
 class DefaultController extends Controller
 {
+    //public $layout = 'index';
+
     public function actions()
     {
         return [
@@ -16,7 +18,8 @@ class DefaultController extends Controller
     }
 
     public function actionIndex()
-    {
+    {   $this->layout = 'index';
+
         return $this->render('index');
     }
 }

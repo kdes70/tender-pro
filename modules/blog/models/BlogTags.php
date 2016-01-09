@@ -50,10 +50,10 @@ class BlogTags extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getBlogTagsBlogs()
-    {
-        return $this->hasMany(BlogTagsBlog::className(), ['tags_id' => 'id']);
-    }
+//    public function getBlogTagsBlogs()
+//    {
+//        return $this->hasMany(BlogTagsBlog::className(), ['tags_id' => 'id']);
+//    }
 
     public static function findAllByName($name)
     {

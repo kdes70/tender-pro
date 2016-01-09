@@ -8,7 +8,7 @@
     use dosamigos\ckeditor\CKEditor;
     use toxor88\switchery\Switchery;
     use kartik\select2\Select2;
-
+use dosamigos\fileinput\BootstrapFileInput;
     /* @var $this yii\web\View */
 /* @var $model app\modules\blog\models\Blog */
 /* @var $form yii\widgets\ActiveForm */
@@ -42,7 +42,7 @@
                 echo $form->field($model, 'tagNames')->widget(SelectizeTextInput::className(),
                     [   // calls an action that returns a JSON object with matched //
                         // tags
-                        'loadUrl'       => ['tag/list'],
+                        'loadUrl'       => ['blog-tags/list'],
                         'options'       => ['class' => 'form-control'],
                         'clientOptions' => [
                             'plugins'     => ['remove_button'],
@@ -55,40 +55,12 @@
                 //Read more at: http://yiiwheels.com/extension/yii2-taggable-behavior
             ?>
 
-            <?php
-
-                //            echo Select2::widget([
-                //                'name' => 'color_1',
-                //                'value' => ['red', 'green'], // initial value
-                //                'data' => $data,
-                //                'options' => ['placeholder' => 'Select a color ...', 'multiple' => true],
-                //                'pluginOptions' => [
-                //                    'tags' => true,
-                //                    'maximumInputLength' => 10
-                //                ],
-                //            ]);
-
-            ?>
-
-
-            <?/*= $form->field($model, 'tagNames')->widget(SelectizeTextInput::className(), [
-            // calls an action that returns a JSON object with matched
-            // tags
-            'loadUrl' => ['/blog/tags/list'],
-            'options' => ['class' => 'form-control'],
-            'clientOptions' => [
-                'plugins' => ['remove_button'],
-                'valueField' => 'name',
-                'labelField' => 'name',
-                'searchField' => ['name'],
-                'create' => true,
-            ],
-        ])->hint(Yii::t('app', 'HINT_TAGS')) */?>
-
-
         </div>
         <div class="col-lg-6">
             <?= $form->field($model, 'title')->textInput(['maxlength' => true])->hint('заголовок') ?>
+            <?= $form->field($model, 'id')->hiddenInput()->label(false) ?>
+            <?= $form->field($model, 'slug')->hiddenInput()->label(false) ?>
+
         </div>
         <div class="col-lg-6">
             <!--        --><?//= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
@@ -138,7 +110,7 @@
 
     <div class="form_group">
         <div class="col-md-offset-2 col-md-10">
-            <? if($images):?>
+            <?if($images):?>
 
             <div class="row">
                 <? foreach($images as $image):?>
@@ -155,7 +127,7 @@
     </div>
 
     <div class="col-md-12">
-      <!--  --><?/*= $form->field($model, 'image')->widget(\dosamigos\fileinput\BootstrapFileInput::className(), [
+    <?= $form->field($model, 'image[]')->widget(BootstrapFileInput::className(), [
             'options' => ['accept' => 'image/*', 'multiple' => true],
             'clientOptions' => [
                 'previewFileType' => 'text',
@@ -164,19 +136,7 @@
                 'removeClass' => 'btn btn-danger',
                 'removeIcon' => '<i class="glyphicon glyphicon-trash"></i> '
             ]
-        ]);*/?>
-    </div>
-
-
-
-
-
-
-
-
-    <!--    --><?//= $form->field($model, 'image')->fileInput()?>
-
-
+        ]);?>
 
 
     <?=$form->field($model, 'status')->widget(Switchery::classname(), [
@@ -195,10 +155,62 @@
 
     ])->label(false);?>
 
-
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
+
+    <div class="col-lg-6">
+
+<!--        --><?// echo $form->field($model, 'keywords')->widget(Select2::classname(), [
+//            'value' => ['red', 'green'],
+//            'options' => ['placeholder' => 'Select a color ...', 'multiple' => true],
+//            'pluginOptions' => [
+//                'tags' => true,
+//                'maximumInputLength' => 10,
+//            ],
+//        ]);
+//        ?>
+        <?= $form->field($model, 'keywords')->textInput(['maxlength' => true, 'id' => 'keywords']) ?>
+
+        <div class="seo_result">
+            <p>Отображаем результат SEO</p>
+            <h3 id="meta_title_result"></h3>
+            <div class="s_res">
+                <div id="meta_url_result"></div>
+                <span id="meta_desc_result"></span>
+<!--                <p id="meta_keyword_result"></p>-->
+            </div>
+
+<!-- отображаем результат SEO-->
+        </div>
+
+    </div>
+    <div class="col-lg-6">
+        <?= $form->field($model, 'description')->textArea(['rows' => 6]) ?>
+    </div>
+
+
+
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="form-group">
+            <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        </div>
+    </div>
+    <div class="col-lg-6">
+
+    </div>
+</div>
+
+
+
+
     <?php ActiveForm::end(); ?>
 
 </div>
+<!--<script>
+    $(document).ready(function(){
+
+        seoResult();
+
+    });
+</script>-->

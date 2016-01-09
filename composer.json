@@ -31,7 +31,9 @@
 		"2amigos/yii2-taggable-behavior": "~1.0",
 		"2amigos/yii2-selectize-widget": "~1.0",
 		"2amigos/yii2-ckeditor-widget": "~1.0",
-	  	"iutbay/yii2-kcfinder" : "*"
+	  	"iutbay/yii2-kcfinder" : "*",
+	  	"costa-rico/yii2-images": "dev-master",
+		"2amigos/yii2-file-input-widget": "~1.0"
 	},
 	"require-dev": {
 		"yiisoft/yii2-codeception": "*",

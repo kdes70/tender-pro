@@ -22,6 +22,10 @@ use yii\behaviors\TimestampBehavior;
  */
 class BlogCategory extends \yii\db\ActiveRecord
 {
+
+
+    const STATUS_PUBLISH = 1;
+
     /**
      * @inheritdoc
      */

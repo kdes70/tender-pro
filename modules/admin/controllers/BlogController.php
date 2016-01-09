@@ -9,6 +9,7 @@ use Yii;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\web\UploadedFile;
 
 /**
  * BlogController implements the CRUD actions for Blog model.
@@ -63,7 +64,7 @@ class BlogController extends Controller
     {
         $model = new Blog();
 
-        $items = $model->getTags()->all();
+        $items = $model->getBlogTags()->all();
         $tags = [];
         foreach ($items as $item)
         {
@@ -73,7 +74,20 @@ class BlogController extends Controller
 
         $images = ''; //isset($model->getImages()) ? $model->getImages() : FALSE;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) )
+        {
+
+//            $model->image = UploadedFile::getInstance($model, 'image');
+//            if($model->image)
+//            {
+//                $path = Yii::getAlias('@webroot/upload/images/blog/').$model->image->baseName.'.'.$model->image->extension;
+//                $model->image->saveAs($path);
+//                $model->attachImage($path);
+//            }
+
+
+            // dump(Yii::$app->request->post());
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -93,11 +107,31 @@ class BlogController extends Controller
     {
         $model = $this->findModel($id);
 
+        $items = $model->getBlogTags()->all();
+        $tags = [];
+        foreach ($items as $item)
+        {
+            $tags[] = $item->name;
+        };
+        $model->tagNames = BlogTags::array2string($tags);
+
+        //dump(Yii::$app->request->post());
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            $model->image = UploadedFile::getInstance($model, 'image');
+            if($model->image)
+            {
+                $path = Yii::getAlias('@webroot/upload/images/blog/').$model->image->baseName.'.'.$model->image->extension;
+                $model->image->saveAs($path);
+                $model->attachImage($path);
+            }
+
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'images' => $model->getImages(),
             ]);
         }
     }

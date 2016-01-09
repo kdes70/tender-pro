@@ -104,3 +104,42 @@ h1 {
     letter-spacing: 0.1em;
     max-width: 7em;
 }
+
+
+/* SEO - RESULT*/
+.seo_result{
+    background-color: #fff !important;
+    padding: 10px;
+    position: relative;
+    font-family: arial,sans-serif;
+    line-height: 1.2;
+    text-align: left;
+}
+#meta_title_result{
+    color: #1a0dab;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+.seo_result, .s_res{
+    line-height: 18px;
+}
+.s_res{
+    color: #545454;
+}
+
+#meta_url_result{
+    color: #006621;
+    font-style: normal;
+    font-size: 14px;
+}
+#meta_desc_result{
+    line-height: 1.4;
+    word-wrap: break-word;
+    font-size: small
+}

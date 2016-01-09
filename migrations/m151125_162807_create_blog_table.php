@@ -18,12 +18,15 @@ class m151125_162807_create_blog_table extends Migration
             'user_id' =>$this->integer()->notNull(),
             'title' => $this->string()->notNull(),
             'slug' => $this->string()->notNull(),
+            'keyword' => $this->string()->notNull(),
             'text' => $this->text()->notNull(),
+            'description' => $this->text()->notNull(),
             'prev_img' => $this->string()->notNull(),
             'images_id' => $this->integer(),
             'publication_at' => $this->dateTime(),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
+            'update_user_id' => $this->integer(),
             'status' => $this->smallInteger()->notNull()->defaultValue(0),
             'order' => $this->integer()->notNull()->defaultValue(0),
         ], $tableOptions);
@@ -63,14 +66,14 @@ class m151125_162807_create_blog_table extends Migration
 
         $this->createTable('{{%blog_tags_blog}}', [
             'blog_id' => $this->integer()->notNull(),
-            'tags_id' => $this->integer()->notNull(),
+            'tag_id' => $this->integer()->notNull(),
         ], $tableOptions);
 
         $this->createIndex('index_blog_id', '{{%blog_tags_blog}}', 'blog_id');
-        $this->createIndex('index_tags_id', '{{%blog_tags_blog}}', 'tags_id');
+        $this->createIndex('index_tag_id', '{{%blog_tags_blog}}', 'tag_id');
 
         $this->addForeignKey('FK_blog_tags', '{{%blog_tags_blog}}', 'blog_id', '{{%blog}}', 'id');
-        $this->addForeignKey('FK_tags_blog_tags', '{{%blog_tags_blog}}', 'tags_id', '{{%blog_tags}}', 'id');
+        $this->addForeignKey('FK_tags_blog_tags', '{{%blog_tags_blog}}', 'tag_id', '{{%blog_tags}}', 'id');
 
 
     }
