@@ -2,13 +2,13 @@
 
 namespace app\modules\admin\models\search;
 
-use app\modules\admin\models\Settings;
+use app\modules\settings\models\Settings;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 /**
- * SettingsSearch represents the model behind the search form about `app\modules\admin\models\Settings`.
+ * SettingsSearch represents the model behind the search form about `app\modules\settings\models\Settings`.
  */
 class SettingsSearch extends Settings
 {

@@ -10,7 +10,7 @@
 	},
 
     "minimum-stability": "dev",
-    "prefer-stable": true,
+  	"prefer-stable": true,
 	"require": {
 		"php": ">=5.4.0",
 		"yiisoft/yii2": "*",
@@ -18,7 +18,7 @@
 		"yiisoft/yii2-swiftmailer": "*",
 		"bower-asset/html5shiv": "*",
 		"bower-asset/respond": "*",
-		"bower-asset/jquery": "1.*",
+		"bower-asset/jquery": "2.*",
 		"kartik-v/yii2-widget-datepicker": "*",
 		"kartik-v/yii2-field-range": "*",
 		"pheme/yii2-settings": "*",
@@ -33,7 +33,9 @@
 		"2amigos/yii2-ckeditor-widget": "~1.0",
 	  	"iutbay/yii2-kcfinder" : "*",
 	  	"costa-rico/yii2-images": "dev-master",
-		"2amigos/yii2-file-input-widget": "~1.0"
+		"2amigos/yii2-file-input-widget": "~1.0",
+		"bower-asset/typed.js": "^1.1",
+		"bower-asset/wowjs": "^1.1"
 	},
 	"require-dev": {
 		"yiisoft/yii2-codeception": "*",

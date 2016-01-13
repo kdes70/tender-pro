@@ -1,10 +1,10 @@
 <?php
 
-namespace app\modules\admin\controllers;
+namespace app\modules\settings\controllers;
 
-use app\components\GoodException;
+use app\components\widgets\Alert;
 use app\modules\admin\models\search\SettingsSearch;
-use app\modules\admin\models\Settings;
+use app\modules\settings\models\Settings;
 use pheme\grid\actions\ToggleAction;
 use Yii;
 use yii\filters\VerbFilter;
@@ -18,16 +18,16 @@ class SettingsController extends Controller
 {
 
 
-    public function actions()
-    {
-        return [
-            'toggle' => [
-                'class' => ToggleAction::className(),
-                'modelClass' => 'app\modules\admin\models\Settings',
-                //'setFlash' => true,
-            ]
-        ];
-    }
+//    public function actions()
+//    {
+//        return [
+//            'toggle' => [
+//                'class' => ToggleAction::className(),
+//                'modelClass' => 'app\modules\settings\models\Settings',
+//                //'setFlash' => true,
+//            ]
+//        ];
+//    }
 
     public function behaviors()
     {
@@ -47,16 +47,30 @@ class SettingsController extends Controller
      */
     public function actionIndex()
     {
-        $model = new Settings();
+
 
         if (Yii::$app->request->post())
         {
                 $section = Yii::$app->request->post();
 
+
+
             dump($section);
                 $success = 0;
+
                 foreach ($section as $key => $item) {
-                    $setting_item = $model->findOne(['key' => $key]);
+
+                    if(is_array($item))
+                    {
+                        dump($key);
+                        $modal = new Settings();
+                        $setting_item = $modal->find(['key' => $key]);
+                    }
+
+
+                //   dump($setting_item);exit;
+
+//TODO Определить типь поля для значения
                     if ($setting_item) {
 
                         if(!isset($item['value'])){
@@ -73,7 +87,7 @@ class SettingsController extends Controller
                         ];
                         $setting_item->attributes = $values;
 
-                       dump($values);
+                      // dump($values);
 
                         if ($setting_item->save()) {
 
@@ -87,8 +101,9 @@ class SettingsController extends Controller
                 }
                 if($success < 0)
                 {
-                    echo \yii2mod\alert\Alert::widget([
-                        'type' => \yii2mod\alert\Alert::TYPE_WARNING,
+
+                    echo Alert::widget([
+                        'type' => 'success',
                         'options' => [
                             'title' => 'Success message',
                             'text' => "You will not be able to recover this imaginary file!",
@@ -101,13 +116,13 @@ class SettingsController extends Controller
 
                     echo 'Success';
 
-
-
                     // данные в базу добавлены, можна и флеш-сообщение показать:
 
 
                 }
         }
+
+
         else {
             $searchModel = new SettingsSearch();
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);

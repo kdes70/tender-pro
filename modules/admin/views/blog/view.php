@@ -25,6 +25,28 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
+        <div class="col-md-12">
+
+             <div class="blog-post-preview">
+                    <div style='transform-origin: 0 0; transform: scale(1); margin-bottom:-100px;'>
+                        <iframe src='http://tender-pro.lok/blog/default/view?slug=<?php echo $model->slug; ?>' frameborder='0' scrolling='no' width='100%' height='600px'>
+                            Your browser does not support iframes.
+                        </iframe>
+                    </div>
+            </div>
+        </div>
+            <!--        <iframe src="http://tender-pro.lok/blog/default/index" width="100%" height="600px" seamless></iframe>-->
+
+
+
+
+</div>
+
+
+
+
+
+
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [

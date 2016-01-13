@@ -14,12 +14,18 @@
 
             <div class="col-md-8">
 
-                <?php if(isset($blog_post)):?>
-
+                <?php if(isset($blog_post)): ?>
                     <?php  foreach ($blog_post as $model):?>
-                        <?php echo $this->render('shortView', ['model' => $model]);?>
-                    <?php endforeach;?>
 
+                        <?php foreach ($model->getImages() as $image): ?>
+                            <?php if($image):?>
+                                <?php  $items[] = '<img class="img-responsive" src="' . $image->getUrl('750x200') . '" alt="">'; ?>
+                            <?php endif;?>
+                        <?php endforeach; ?>
+
+                        <?php echo $this->render('_short_post', ['model' => $model, 'images' => $items]);?>
+
+                    <?php endforeach;?>
                 <?php endif;?>
 
 
@@ -47,28 +53,8 @@
 
             <div class="col-md-4">
                 <!-- Blog Search Well -->
-                <div class="well">
-                    <h4>Blog Search</h4>
 
-                    <!-- /.input-group -->
-                </div>
-
-                <!-- Blog Categories Well -->
-                <div class="well">
-                    <h4>Blog Categories</h4>
-
-                    <!-- /.row -->
-                </div>
-
-                <!-- Side Widget Well -->
-                <div class="well">
-                    <h4>Side Widget Well</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.
-                    </p>
-                </div>
-
-                <?php// echo $this->render('_sidebar.php')?>
+                <?php echo $this->render('_sidebar.php')?>
 
             </div>
 

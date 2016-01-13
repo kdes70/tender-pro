@@ -2,6 +2,8 @@
 
 namespace app\modules\main\controllers;
 
+use Yii;
+use app\components\Settings;
 use yii\web\Controller;
 
 class DefaultController extends Controller
@@ -19,6 +21,14 @@ class DefaultController extends Controller
 
     public function actionIndex()
     {   $this->layout = 'index';
+
+
+       $settings = Yii::$app->settings;
+
+        $value = $settings->get('blog.number_posts');
+
+
+        dump($value);
 
         return $this->render('index');
     }

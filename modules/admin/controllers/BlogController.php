@@ -50,6 +50,14 @@ class BlogController extends Controller
      */
     public function actionView($id)
     {
+//        $ch = curl_init();
+//        curl_setopt($ch, CURLOPT_URL, 'http://tender-pro.lok/blog/default/index');
+//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+//        $result = curl_exec($ch);
+//        curl_close($ch);
+
+        //dump($result);
+
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);

@@ -1,12 +1,11 @@
 <?php
 
-    use app\modules\admin\widgets\SettingsWidget;
-    use yii\helpers\Html;
+    use app\modules\settings\components\widgets\SettingsWidget;
+    use app\modules\settings\models\Settings;
     use yii\grid\GridView;
-    use yii\widgets\Pjax;
     use yii\helpers\ArrayHelper;
-    use app\modules\admin\models\Settings;
-
+    use yii\helpers\Html;
+    use yii\widgets\Pjax;
 
 
     /* @var $this yii\web\View */
@@ -59,7 +58,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php Pjax::end(); ?>
 
 
-    <?php echo SettingsWidget::widget();?>
+    <?php echo SettingsWidget::widget(['title' => 'Settings']);?>
 
 
 </div>

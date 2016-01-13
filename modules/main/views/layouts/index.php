@@ -1,9 +1,9 @@
 <?php
 
-use yii\helpers\Html;
-use app\assets\MainAsset;
+    use app\assets\MainAsset;
+    use yii\helpers\Html;
 
-MainAsset::register($this);
+    MainAsset::register($this);
 
     /* @var $this \yii\web\View */
     /* @var $content string */
@@ -33,6 +33,7 @@ MainAsset::register($this);
 
 <body>
 <?php $this->beginBody() ?>
+<div id="page-preloader"><span class="spinner"></span></div>
 <!-- Здесь пишем код -->
 
 <header class="main-head" style="background-image: url('img/header-bg.jpg')">
@@ -68,7 +69,7 @@ MainAsset::register($this);
             <div class="row">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8 col-sm-12 col-xs-12 ">
-                    <div class="hi-title">
+                    <div class="hi-title wow"  data-wow-duration="1s">
                         <h1>Привет! меня зовут Дмитрий <br>я занимаюсь <span>веб-разработкой</span> сайтов и сервисов</h1>
                     </div>
                 </div>
@@ -76,9 +77,6 @@ MainAsset::register($this);
 
             </div>
         </div>
-
-
-
 
 
     </div>
@@ -108,25 +106,16 @@ MainAsset::register($this);
     </div>
 
 </section>
+<?php
+
+    $script = <<< JS
+
+JS;
+    //маркер конца строки, обязательно сразу, без пробелов и табуляции
+    $this->registerJs($script, yii\web\View::POS_READY);
+?>
 
 <div class="hidden"></div>
-
-<!-- Load CSS -->
-<script>
-    function loadCSS(hf) {
-        var ms=document.createElement("link");ms.rel="stylesheet";
-        ms.href=hf;document.getElementsByTagName("head")[0].appendChild(ms);
-    }
-    loadCSS("_header.min.css"); //Header Styles (compress & paste to header after release)
-    loadCSS("_main.min.css");   //User Styles + Media Queries
-</script>
-
-<!-- Load Scripts -->
-<script>var scr = {"scripts":[
-//        {"src" : "js/libs.js", "async" : false},
-        {"src" : "js/main.js", "async" : false}
-    ]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);
-</script>
 <?php $this->endBody() ?>
 </body>
 </html>

@@ -2,6 +2,27 @@
 @import fonts.sass
 @import vars.sass
 
+/* PRELOADER */
+
+#page-preloader
+    position: fixed
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    background: #2b2a30
+    z-index: 100500
+    .spinner
+        width: 110px
+        height: 110px
+        position: absolute
+        left: 50%
+        top: 50%
+        background: url('../img/page_loader.svg') no-repeat 50% 50%
+        margin: -50px 0 0 -50px
+
+
+
 body
 	font-size: 16px
 	min-width: 320px

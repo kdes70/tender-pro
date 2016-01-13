@@ -1,14 +1,15 @@
 <?php
 
     use kartik\select2\Select2;
+    use toxor88\switchery\Switchery;
     use yii\helpers\Html;
-    use yii\widgets\ActiveForm;
-use toxor88\switchery\Switchery;
     use yii\web\JsExpression;
+    use yii\widgets\ActiveForm;
+
     //var_dump($section_data);exit;
 
     /* @var $this yii\web\View */
-    /* @var $model app\modules\admin\models\Settings */
+    /* @var $model \app\modules\settings\models\Settings */
     /* @var $form yii\widgets\ActiveForm */
 ?>
 

@@ -24,5 +24,6 @@ class MainAsset extends AssetBundle
         'app\assets\RespondAsset',
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'app\assets\WowjsAsset',
     ];
 }

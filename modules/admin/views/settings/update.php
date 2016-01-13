@@ -1,9 +1,9 @@
 <?php
 
-use yii\helpers\Html;
+    use yii\helpers\Html;
 
-/* @var $this yii\web\View */
-/* @var $model app\modules\admin\models\Settings */
+    /* @var $this yii\web\View */
+/* @var $model \app\modules\settings\models\Settings */
 
 $this->title = 'Update Settings: ' . ' ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Settings', 'url' => ['index']];

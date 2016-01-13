@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\admin\models;
+namespace app\modules\settings\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
@@ -27,10 +27,11 @@ class Settings extends \yii\db\ActiveRecord implements \pheme\settings\models\Se
         'string'  => 'string',
         'integer' => 'integer',
         'boolean' => 'boolean',
-        'float'   => 'float',
-        'array'   => 'array',
-        'object'  => 'object',
-        'null'    => 'null'
+        'text'    => 'text',
+//        'float'   => 'float',
+//        'array'   => 'array',
+//        'object'  => 'object',
+//        'null'    => 'null'
     ];
     /**
      * @inheritdoc
@@ -48,8 +49,15 @@ class Settings extends \yii\db\ActiveRecord implements \pheme\settings\models\Se
         return [
             [['value', 'description'], 'string'],
             [['active'], 'integer'],
-            [['created', 'modified'], 'safe'],
-            [['type', 'section', 'key'], 'string', 'max' => 255]
+            [
+                ['key'],
+                'unique',
+                'targetAttribute' => ['section', 'key'],
+                'message' => '{attribute} "{value}" already exists for this section.'
+                    //Module::t('settings', '{attribute} "{value}" already exists for this section.')
+            ],
+            [['created', 'modified', 'type'], 'safe'],
+            [['section', 'key'], 'string', 'max' => 255]
         ];
     }
 

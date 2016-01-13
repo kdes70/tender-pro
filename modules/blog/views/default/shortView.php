@@ -7,32 +7,32 @@ use yii\bootstrap\Carousel;
     <p class="lead">by <a href="index.php"><?=$model->user_id?></a></p>
     <p><span class="glyphicon glyphicon-time"></span> <?php echo Yii::$app->formatter->asDate($model->publication_at, 'd MMMM yyyy');?></p>
 
-<!--    --><?php //foreach ($model->getImages() as $image): ?>
-<!--        --><?php //if($image):?>
-<!--            --><?php // $items[] = '<img class="img-responsive" src="' . $image->getUrl('730x400') . '" alt="">'; ?>
-<!--        --><?php //endif;?>
-<!--    --><?php //endforeach; ?>
-<!--    --><?php //if($items):?>
-<!--        --><?//echo Carousel::widget([
-//            'items' => $items,
-//            'controls' => [
-//                '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span>',
-//                '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span>'
-//            ]
-//            // the item contains only the image
-//            // $items,
-//            // equivalent to the above
-//            //  ['content' => ' <img class="img-responsive" src="http://placehold.it/900x300" alt="">'],
-//            // the item contains both the image and the caption
-////        [
-////            'content' => ' <img class="img-responsive" src="http://placehold.it/900x300" alt="">',
-////            'caption' => '<h4>This is title</h4><p>This is the caption text</p>',
-////            'options' => [],
-////        ],
-//
-//        ]);?>
-<!---->
-<!--    --><?php //endif;?>
+    <?php foreach ($model->getImages() as $image): ?>
+        <?php if($image):?>
+            <?php  $items[] = '<img class="img-responsive" src="' . $image->getUrl('750x300') . '" alt="">'; ?>
+        <?php endif;?>
+    <?php endforeach; ?>
+    <?php if($items):?>
+        <?echo Carousel::widget([
+            'items' => $items,
+            'controls' => [
+                '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span>',
+                '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span>'
+            ]
+            // the item contains only the image
+            // $items,
+            // equivalent to the above
+            //  ['content' => ' <img class="img-responsive" src="http://placehold.it/900x300" alt="">'],
+            // the item contains both the image and the caption
+//        [
+//            'content' => ' <img class="img-responsive" src="http://placehold.it/900x300" alt="">',
+//            'caption' => '<h4>This is title</h4><p>This is the caption text</p>',
+//            'options' => [],
+//        ],
+
+        ]);?>
+
+    <?php endif;?>
 
     <span class="label label-info"><?=$model->category->name ?></span>
     <!--    <img class="img-responsive" src="http://placehold.it/900x300" alt="">-->

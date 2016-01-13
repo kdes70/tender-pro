@@ -1,8 +1,8 @@
 <?php
 
-use yii\helpers\ArrayHelper;
+    use yii\helpers\ArrayHelper;
 
-$params = ArrayHelper::merge(
+    $params = ArrayHelper::merge(
     require(__DIR__ . '/params.php'),
     require(__DIR__ . '/params-local.php')
 );
@@ -44,6 +44,11 @@ return [
         'admin' => [
             'class' => 'app\modules\admin\Module',
             'layout' => 'main',
+            'controllerMap' => [
+                'settings' => [
+                    'class' => 'app\modules\settings\controllers\SettingsController',
+                ],
+            ],
         ],
         'yii2images' => [
             'class' => 'rico\yii2images\Module',
@@ -60,7 +65,10 @@ return [
             'class' => 'yii\db\Connection',
             'charset' => 'utf8',
         ],
-        'settings' => ['class' => 'app\component\Settings'],
+        'settings' => [
+            'class' => 'app\modules\settings\components\Settings'
+        ],
+
         'urlManager' => [
             'class' => 'yii\web\UrlManager',
             'enablePrettyUrl' => true,

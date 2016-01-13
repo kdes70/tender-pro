@@ -2,11 +2,10 @@
 
 namespace app\modules\blog\models;
 
-use app\modules\blog\models\BlogCategory;
+use app\behaviors\CreateUpdateBehavior;
 use app\modules\admin\models\User;
 use app\modules\blog\Module;
 use dosamigos\taggable\Taggable;
-use app\behaviors\CreateUpdateBehavior;
 use rico\yii2images\behaviors\ImageBehave;
 use Yii;
 
@@ -99,14 +98,18 @@ class Blog extends \yii\db\ActiveRecord
     {
         return [
 
-            'image' => ['class' => ImageBehave::className()],
+            'image' => [
+                'class' => 'rico\yii2images\behaviors\ImageBehave',
+            ],
             'createUpdate' => ['class' => CreateUpdateBehavior::className()],
-            [ 'class' => Taggable::className(), ],//tags
-            'slug' => [
-                'class' => 'app\behaviors\Slug',
-                'in_attribute' => 'title',
+
+            ['class' => Taggable::className(),],//tags
+
+            'slug'         => [
+                'class'         => 'app\behaviors\Slug',
+                'in_attribute'  => 'title',
                 'out_attribute' => 'slug',
-                'translit' => true
+                'translit'      => TRUE
             ],
 
         ];

@@ -2,10 +2,11 @@
 
 namespace app\modules\blog\controllers;
 
-use yii\web\Controller;
+use Yii;
 use app\modules\blog\models\Blog;
 use app\modules\blog\models\BlogCategory;
 use yii\data\Pagination;
+use yii\web\Controller;
 
 class DefaultController extends Controller
 {
@@ -19,12 +20,31 @@ class DefaultController extends Controller
             ->limit($pages->limit)
             ->all();
 
+
+
+
          //  var_dump($models);exit;
 
         return $this->render('index', [
             'blog_post' => $models,
             'pages' => $pages,
             'category' => BlogCategory::find()->where(['status' => BlogCategory::STATUS_PUBLISH])->all(),
+            'action' => 'short',
+        ]);
+    }
+
+    public function actionView($slug)
+    {
+
+
+
+        $model = new Blog();
+
+        return $this->render('full_post', [
+            'model' => $model->find()
+                ->where(['slug' => $slug])
+                ->one(),
+            'action' => 'full',
         ]);
     }
 }
