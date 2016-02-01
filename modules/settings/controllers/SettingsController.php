@@ -51,77 +51,66 @@ class SettingsController extends Controller
 
         if (Yii::$app->request->post())
         {
-                $section = Yii::$app->request->post();
+            $section = Yii::$app->request->post();
+
+            foreach ($section as $key => $item) {
+
+                if(count($item) > 1 || is_array($item)){
+
+                   // $modal = new Settings();
+                   // $setting_item = $modal->findOne(['key' => $key]);
+
+                    $value = $item['value'];
+
+                     if(!isset($item['value']) && $item['type'] === 'boolean')
+                     {
+                         $value = (!isset($item['value'])) ? '0' : '1';
+                     }
+                     if(!isset($item['value']) && $item['type'] === 'integer')
+                     {
+                         $value = (isset($item['value'])) ? (int)$item['value'] : 0;
+                     }
+
+                    // $setting_item->value = $value;
+                   //  $setting_item->active = $item['active'];
+
+                     if (/*$setting_item->save()*/ Settings::updateAll(['value' => $value, 'active' =>$item['active']], ['key' => $key])) {
+
+                        echo  "Success";
+                       /*  if($success < 0)
+                         {
+
+                             echo Alert::widget([
+                                 'type' => 'success',
+                                 'options' => [
+                                     'title' => 'Success message',
+                                     'text' => "You will not be able to recover this imaginary file!",
+                                     'confirmButtonText'  => "Yes, delete it!",
+                                     'cancelButtonText' =>  "No, cancel plx!"
+                                 ]
+                             ]);
+
+                             Yii::$app->session->setFlash('success', 'Настройки сохранены');
+
+                             echo 'Success';
+
+                             // данные в базу добавлены, можна и флеш-сообщение показать:
+
+
+                         }*/
+                         //continue;
+                     }
+                     else{
+                         echo 'Error';
+                     }
+
+                 }
 
 
 
-            dump($section);
-                $success = 0;
+              }
 
-                foreach ($section as $key => $item) {
-
-                    if(is_array($item))
-                    {
-                        dump($key);
-                        $modal = new Settings();
-                        $setting_item = $modal->find(['key' => $key]);
-                    }
-
-
-                //   dump($setting_item);exit;
-
-//TODO Определить типь поля для значения
-                    if ($setting_item) {
-
-                        if(!isset($item['value'])){
-
-                            $value = '0';
-                        }else{
-                            $value = '1';
-                        }
-
-                       // exit;
-                        $values = [
-                            'value'   => $value,
-                            'active' => $item['active']
-                        ];
-                        $setting_item->attributes = $values;
-
-                      // dump($values);
-
-                        if ($setting_item->save()) {
-
-                            $success++;
-                           //echo  "Success";
-                        }
-                        else{
-                            echo  "Error";
-                        }
-                    }
-                }
-                if($success < 0)
-                {
-
-                    echo Alert::widget([
-                        'type' => 'success',
-                        'options' => [
-                            'title' => 'Success message',
-                            'text' => "You will not be able to recover this imaginary file!",
-                            'confirmButtonText'  => "Yes, delete it!",
-                            'cancelButtonText' =>  "No, cancel plx!"
-                        ]
-                    ]);
-
-                    Yii::$app->session->setFlash('success', 'Настройки сохранены');
-
-                    echo 'Success';
-
-                    // данные в базу добавлены, можна и флеш-сообщение показать:
-
-
-                }
         }
-
 
         else {
             $searchModel = new SettingsSearch();

@@ -5,6 +5,7 @@ use app\modules\settings\models\Settings;
 use toxor88\switchery\Switchery;
 use yii\bootstrap\Widget;
 use yii\helpers\Html;
+use yii\web\JsExpression;
 
 /**
  * Class SettingsWidget
@@ -79,6 +80,7 @@ class SettingsWidget extends Widget
                 Html::label($item['key'], $item['key'], ['class' => 'col-sm-2 control-label']) .
                 '<div class="col-sm-3">' .
                 $this->set_input_type($item['type'], $item['key'], $item['value']) .
+                Html::hiddenInput($item['key'].'[type]'  ,$item['type']).
                 '</div>' .
                 '</div>' .
                 '<div class="col-sm-4">' .
@@ -130,9 +132,9 @@ class SettingsWidget extends Widget
                             'speed'              => '0.1s',
                             'size'               => 'default',
                         ],
-                        'options' => array_merge(['value' => 0], $this->has_checked($value)),
-                       /* 'clientChangeEvent' => new JsExpression('function() {
-                            alert("checked: " + this.checked);
+                        'options' => array_merge(['value' => '1'], $this->has_checked($value)),
+                        /*'clientChangeEvent' => new JsExpression('function() {
+                            "checked: " + this.checked;
                         }'),*/
 
                     ]);

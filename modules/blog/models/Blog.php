@@ -103,7 +103,7 @@ class Blog extends \yii\db\ActiveRecord
             ],
             'createUpdate' => ['class' => CreateUpdateBehavior::className()],
 
-            ['class' => Taggable::className(),],//tags
+            ['class' => Taggable::className()],//tags
 
             'slug'         => [
                 'class'         => 'app\behaviors\Slug',

@@ -33,10 +33,10 @@
                 <?php if(isset($pages)):?>
                 <div class="pagination">
                     <ul class="pager">
-                        <?php // display pagination
-                            // echo LinkPager::widget([
-                            //    'pagination' => $pages,
-                            // ]);?>
+                        <?php  //display pagination
+                             echo LinkPager::widget([
+                                'pagination' => $pages,
+                             ]);?>
                         <!--                    <li class="previous">-->
                         <!--                        <a href="#">&larr; Older</a>-->
                         <!--                    </li>-->

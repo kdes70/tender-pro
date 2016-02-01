@@ -41,7 +41,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 col-md-3 col-sm-6 col-xs-8">
-                    <a href="/" class="logo"><span>$></span>webim</a>
+                    <a href="/" class="logo"><span> <</span>/ CODES /<span>> </span></a>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-4 col-lg-push-7 col-md-push-6">
                     <ul class="social">

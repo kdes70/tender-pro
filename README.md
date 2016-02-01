@@ -1,4 +1,4 @@
-I have taken as a basis "SEO-service on Yii 2"
+I have taken as a basis "CODES-CMS on Yii 2"
 ================================
 I have taken as a basis
 Source code of SEO-service.

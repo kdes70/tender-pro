@@ -23,12 +23,7 @@ class DefaultController extends Controller
     {   $this->layout = 'index';
 
 
-       $settings = Yii::$app->settings;
 
-        $value = $settings->get('blog.number_posts');
-
-
-        dump($value);
 
         return $this->render('index');
     }

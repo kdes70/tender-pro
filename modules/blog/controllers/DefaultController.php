@@ -12,9 +12,14 @@ class DefaultController extends Controller
 {
     public function actionIndex()
     {
+        $settings = Yii::$app->settings;
+
+        $num_post = $settings->get('blog.number_posts');
+
+
         $query = Blog::getPublishedPosts();
         $countQuery = clone $query;
-        $pages = new Pagination(['defaultPageSize' => 3,'totalCount' => $countQuery->count()]);
+        $pages = new Pagination(['defaultPageSize' => $num_post,'totalCount' => $countQuery->count()]);
 
         $models = $query->offset($pages->offset)
             ->limit($pages->limit)
